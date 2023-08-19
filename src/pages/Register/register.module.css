@@ -1,0 +1,73 @@
+.auth_form_container,
+.register_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth_form_container label {
+  text-align: left;
+  padding: 0.25rem 0;
+}
+
+.auth_form_container input {
+  margin: 0.5rem 0rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+
+.auth_form_container input:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* Add a shadow for emphasis */
+  outline: none;
+}
+
+.error_text {
+  background: rgba(241, 65, 65, 0.895);
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 5px 5px;
+}
+
+@media screen and (min-width: 600px) {
+  .auth_form_container {
+    background-color: rgba(55, 61, 66, 0);
+    padding: 5rem;
+    border: 1px solid rgb(6, 128, 243);
+    border-radius: 10px;
+    margin: 0.5rem;
+    box-shadow: 10px 10px 5px rgba(15, 76, 134, 0.381);
+  }
+
+  .auth_form_container input::placeholder {
+    color: rgb(118, 138, 156);
+  }
+}
+
+.signUp {
+  border: none;
+  background-color: rgb(55, 40, 189);
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  border: 1px solid rgb(55, 40, 189);
+}
+
+.signUp:hover {
+  background-color: transparent;
+  color: rgb(55, 40, 189);
+}
+
+.link_btn {
+  background: none;
+  color: white;
+  text-decoration: underline;
+  padding: 0px;
+  margin: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.link_btn:hover {
+  color: rgb(17, 128, 232);
+}
