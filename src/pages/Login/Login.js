@@ -30,6 +30,8 @@ const Login = (props) => {
 
     if (inputErrors.email !== null) {
       dispatch(login({ error: true, errors: inputErrors }));
+    }else{
+      dispatch(login({error:false,errors:''}))
     }
   };
 
@@ -38,6 +40,8 @@ const Login = (props) => {
 
     if (inputErrors.password !== null) {
       dispatch(login({ error: true, errors: inputErrors }));
+    }else{
+      dispatch(login({error:false,errors:''}))
     }
   };
 
