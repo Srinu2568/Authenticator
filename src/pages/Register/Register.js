@@ -15,11 +15,15 @@ import {
 import LoadingSpinner from '../../components/UI/LoadingSpinner/LoadingSpinner';
 
 const Register = (props) => {
-  useEffect(() => {
-    document.title = props.title;
-  }, []);
 
   const { loading, error, errors } = useSelector((state) => state.signup);
+
+
+  useEffect(() => {
+    document.title = props.title;
+    
+  }, []);
+
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -36,8 +40,8 @@ const Register = (props) => {
 
     if (inputErrors.name !== null) {
       dispatch(signup({ error: true, errors: inputErrors }));
-    } else if (inputErrors.name === null) {
-      dispatch(signup({ errors: false }));
+    }else{
+      dispatch(signup({error:false,errors:''}))
     }
   };
 
@@ -46,6 +50,8 @@ const Register = (props) => {
 
     if (inputErrors.email !== null) {
       dispatch(signup({ error: true, errors: inputErrors }));
+    }else{
+      dispatch(signup({error:false,errors:''}))
     }
   };
 
@@ -54,6 +60,8 @@ const Register = (props) => {
 
     if (inputErrors.password !== null) {
       dispatch(signup({ error: true, errors: inputErrors }));
+    }else{
+      dispatch(signup({error:false,errors:''}))
     }
   };
 
@@ -147,6 +155,7 @@ const Register = (props) => {
   let isPasswordError = error && errors.password;
   let isConfirmPasswordError = error && errors.confirmPassword;
   let isAuthError = error && errors.auth;
+  console.log('Render?')
 
   return (
     <div className={classes.auth_form_container}>
