@@ -3,10 +3,10 @@ const email_pattern =
 
 export const validateName = (name) => {
   let errors = {};
-  if (name.toString().trim() === '' || name.toString().trim().length < 5) {
+  if (name.toString().trim().length === 0 || name.toString().trim().length < 5) {
     errors.name = 'Name is too short!';
   } else {
-    errors.name = null;
+    errors.name = false;
   }
   return errors;
 };
@@ -18,7 +18,7 @@ export const validateEmail = (email) => {
   } else if (!email_pattern.test(email)) {
     errors.email = 'Invalid Email';
   } else {
-    errors.email = null;
+    errors.email = false;
   }
   return errors;
 };
@@ -30,7 +30,7 @@ export const validatePassword = (password) => {
   } else if (password.toString().trim().length < 6) {
     errors.password = 'Password is too short!';
   } else {
-    errors.password = null;
+    errors.password = false;
   }
   return errors;
 };
@@ -42,7 +42,7 @@ export const validateConfirmPassword = (confirmPassword, password) => {
   } else if (confirmPassword.toString().trim() !== password.toString().trim()) {
     errors.confirmPassword = 'Passwords must match';
   } else {
-    errors.confirmPassword = null;
+    errors.confirmPassword = false;
   }
   return errors;
 };
