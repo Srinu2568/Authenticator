@@ -23,9 +23,15 @@ export const loginSlice = createSlice({
         state.error = true;
         state.errors = action.payload.errors;
         return;
+      }else{
+        
+        state.error = false
+        state.errors = action.payload.errors;
+        state.user = action.payload.user;
+        state.isLoggedIn = action.payload.isLoggedIn;
+        return
       }
-      state.user = action.payload.user;
-      state.isLoggedIn = action.payload.isLoggedIn;
+      
     },
     toggleLoading: (state, action) => {
       state.loading = action.payload.loading;
